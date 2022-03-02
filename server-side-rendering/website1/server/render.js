@@ -5,7 +5,7 @@ import { ChunkExtractor } from '@loadable/server';
 import path from 'path';
 import App from '../src/components/App';
 import { getMfChunks, createScriptTag, createStyleTag } from './mfFunctions';
-import SomeComponent from 'website2/SomeComponent';
+// import SomeComponent from 'website2/SomeComponent';
 const statsFile = path.resolve('./buildClient/static/stats.json');
 
 export default async (req, res, next) => {

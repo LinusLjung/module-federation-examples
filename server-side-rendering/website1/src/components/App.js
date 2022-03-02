@@ -1,12 +1,16 @@
 import React from 'react';
-import loadable from '@loadable/component';
+// import loadable from '@loadable/component';
 
 // eslint-disable-next-line
-const SomeComponent = loadable(() => import('website2/SomeComponent'));
+const SomeComponent = (await import('website2/SomeComponent')).default;
 
-export default () => (
-  <div>
-    <h1 onClick={() => alert('website1 is interactive')}>This is website 1</h1>
-    <SomeComponent />
-  </div>
-);
+console.log('SomeComponent', SomeComponent);
+
+export default () => {
+  return (
+    <div>
+      <h1 onClick={() => alert('website1 is interactive')}>This is website 1</h1>
+      <SomeComponent />
+    </div>
+  );
+};
